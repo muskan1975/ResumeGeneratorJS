@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+    <!-- required meta tags for make responsive website -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap css required -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- here we are link the style.css file -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>RESUME GENERATOR</title>
+</head>
+
+<body>
+
+
+    <div class="container" id="cv-form">
+
+        
+        <!-- page heading 
+         we are using text-center style for heading position is center 
+        little bit top bottom margin use my-2 style -->
+
+        <h1 class="text-center my-4">RESUME GENERATOR</h1>
+        <p class="text-center ">By miss muskan</p>
+
+
+        <!-- divided our page into two part by using row and column  -->
+        <div class="row">
+
+            <!-- First column....if we want to your page divided into three parts simply we write "col-md-4"  -->
+            <div class="col-md-6">
+                <h1>personal information</h1>
+
+                <!-- Lets start we created our first field 
+                 mt-4 is user for margin top -->
+                <div class="form-group mt-4">
+
+                    <!-- lable are using for write a Field heading name  -->
+                    <label for="nameField">Your Name</label>
+                    <input type="text" id="nameField" placeholder="Enter your name here" class="form-control">
+                </div>
+
+                <!-- second field -->
+                <div class="form-group mt-4">
+                    <label for="nField">Contact Number</label>
+                    <input type="text" id="nField" placeholder="Your contact number enter here" class="form-control">
+                </div>
+
+                <!-- third field -->
+                <div class="form-group mt-4">
+                    <label for="emailField">Email Id</label>
+                    <input type="text" id="emailField" class="form-control" placeholder="Enter your email id here" />
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="addressField">Address</label>
+                    <!-- textarea are used for extended multiline..simply say we write a infinity lines in textarea
+                  textarea is not a self closing we need to closing textarea manually -->
+                    <textarea type="text" id="addressField" class="form-control" placeholder="Enter your address here"
+                        rows="4">
+                    </textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="" >Select your photo</label>
+                    <input id="imgField" type="file" class="form-control"/>
+                    
+
+                </div>
+
+
+
+
+                <!-- fourth field -->
+                <p class="text-secondary mt-4">*Added Important Links</p>
+                <div class="form-group mt-4">
+                    <lable for="lkField">Linkedin</lable>
+                    <input type="text" id="lkField" class="form-control" placeholder="Enter your linkden profile url here" />
+                </div>
+
+                <!-- fifth field -->
+                <div class="form-group mt-4">
+                    <label for="nkField">Noukri.com</label>
+                    <input type="text" id="nkField" class="form-control" placeholder="Enter your noukri.com profile url here" />
+                </div>
+
+
+
+                <!-- six field -->
+                <div class="form-group mt-4">
+                    <label for="langField">Languages</label>
+                    <input type="text" id="langField" class="form-control" placeholder="Enter languages" />
+                </div>
+
+
+            </div>
+
+            <!-- work eprience skill education project
+             second column  -->
+            <div class="col-md-6">
+                <h1>Professional Information</h1>
+
+                <!-- first field -->
+                <div class="form-group mt-4">
+                    <label for="skillField">Skills</label>
+                    <textarea type="text" id="skillField" class="form-control" placeholder="Enter your skills here"
+                        rows="2">
+                    </textarea>
+                </div>
+
+                <!--second field-->
+                <div class="form-group mt-4">
+                    <label for="objField">Objective</label>
+                    <textarea type="text" id="objField" class="form-control" placeholder="Enter your skills here"
+                        rows="2">
+                    </textarea>
+                </div>
+
+               
+
+                <div class="form-group my-2" id="q">
+                    <label for="">Qualification</label>
+                    <textarea placeholder="Enter your qualification here" class="form-control qField" rows="2">
+                    </textarea>
+
+                    <div class="container text-center mt-4" id="qAddButton">
+                        <button onclick="addNewQField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- third field -->
+                <div class="form-group " id="we">
+                    <label for="">Work Exprience</label>
+                    <textarea placeholder="Enter your work exprience here" class="form-control weField" rows="2">
+                    </textarea>
+
+                    <div class="container text-center mt-4 " id="weAddButton">
+                        <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="container text-center mt-4">
+                <button onclick="generateCV()" class="btn btn-primary btn-lg text-center">Generate CV</button>
+            </div>
+
+
+
+        </div>
+    
+</div>
+
+
+     <div class="container mt-5" id="cv-temp">
+        <div class="row ">
+
+
+
+            <div class="col-md-4 text-center py-5  c-first">
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvGWjwjiCh8UCmLjeDGBj9iIZt7cyiynfwnYz_63_hg&s"
+                    alt="" class="img-fluid my-img " id="imgT" />
+
+
+                <div class="cont ">
+                    <p id="nameT1"></p>
+                    <p id="contactT"></p>
+                    <p id="emailT"></p>
+                    <p id="addressT"></p>
+                    <hr>
+
+                    <p>
+                        <a id="lkT" href="#1"></a>
+                    </p>
+                    <p>
+                        <a id="nkT" href="#2"></a>
+                    </p>
+                    <p id="langT"></p>
+                    <hr>
+
+                </div>
+            </div>
+
+            <div class="col-md-8 py-5  ">
+                <h1 id="nameT2" class="text-center" style="font-family: 800"></h1>
+
+
+                <div class="card mt-4">
+                    <div class="card-header h-background">
+                        <h3>skill</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="skT"></p>
+
+                    </div>
+                </div>
+
+
+
+                <div class="card mt-4 ">
+                    <div class="card-header h-background">
+                        <h3>objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">
+
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header h-background">
+                        <h3>Qualification</h3>
+
+                    </div>
+                    <div class="card-body">
+                        <ul id="qT">
+                            <li></li>
+                            <li>
+
+                            </li>
+                            <li></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="card mt-4">
+                    <div class="card-header h-background">
+                        <h3>Work Exprience</h3>
+
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li></li>
+                            <li>
+
+                            </li>
+                            <li></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="con my-5 text-center">
+                    <button onclick="printCV()" class="btn btn-outline-info">
+                        print cv
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+
+
+    <!-- javascript file required -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- here we goes html code -->
+    <script src="script.js"></script>
+</body>
+
+</html>

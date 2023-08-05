@@ -1,0 +1,44 @@
+ body{
+    
+} 
+
+
+ #cv-temp{
+    display: none;
+
+} 
+
+ #imgT{
+    border: 1px solid pink;
+    height: 250px;
+
+    
+
+}
+
+
+ 
+
+#cv-form{
+    
+}
+
+.c-first{
+    height: 710px;
+    margin-top: 120px;
+    background-color: rgba(17, 193, 228, 0.597);
+    
+    
+
+    
+}
+
+c-second{
+
+    margin-bottom: 20px;
+}
+
+.h-background{
+    background-color: rgba(43, 197, 232, 0.911);
+}
+
